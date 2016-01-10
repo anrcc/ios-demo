@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>OCHelloWorld.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>1728B62119869078003A3152</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C615DE381B65B2D70014A0E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

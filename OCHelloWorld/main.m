@@ -7,11 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Dog.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
+        
+        
         NSLog(@"Hello, World!");
+        
+        
+        Dog* dog =[Dog alloc ];
+        
+        [dog setAge:1 setSex:2 setTelphone:@"恭喜aaaa发财"];
+        dog.age=100;
+        [dog setAge:250];
+        NSLog(@"年龄是=%d", [dog age]);
+        
+        dog.dogName=@"旺财";
+        
+        NSLog(@"狗的名字是%@",dog.dogName);
+        
+        
+        
+        NSLog(@"Hello, World!2");
+
+        
         
         
       //结构体

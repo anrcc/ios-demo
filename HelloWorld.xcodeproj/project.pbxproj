@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1706694C1C429D0D004540A9 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1706694A1C429D0D004540A9 /* Dog.m */; settings = {ASSET_TAGS = (); }; };
 		1728B60519869078003A3152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1728B60419869078003A3152 /* Foundation.framework */; };
 		1728B60719869078003A3152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1728B60619869078003A3152 /* CoreGraphics.framework */; };
 		1728B60919869078003A3152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1728B60819869078003A3152 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1706694A1C429D0D004540A9 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		1706694B1C429D0D004540A9 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		1728B60119869078003A3152 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1728B60419869078003A3152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1728B60619869078003A3152 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -191,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				C615DE3B1B65B2D70014A0E8 /* main.m */,
+				1706694A1C429D0D004540A9 /* Dog.m */,
+				1706694B1C429D0D004540A9 /* Dog.h */,
 			);
 			path = OCHelloWorld;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1706694C1C429D0D004540A9 /* Dog.m in Sources */,
 				C615DE3C1B65B2D70014A0E8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
