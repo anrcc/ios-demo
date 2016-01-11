@@ -11,6 +11,8 @@
 @implementation Dog
 
 @synthesize dogName;
+@synthesize sons;
+@synthesize master;
 
 -(id) init{
     

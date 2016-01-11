@@ -22,4 +22,10 @@
 
 @property NSString *dogName;
 
+//儿子们
+@property NSMutableArray * sons;
+
+//找人们
+@property NSMutableDictionary * master;
+
 @end

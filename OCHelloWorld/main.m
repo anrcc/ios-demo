@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Dog.h"
+#import "CocoaLumberjack.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
@@ -25,21 +26,52 @@ int main(int argc, const char * argv[]) {
         
         dog.dogName=@"旺财";
         
+        [dog setDogName:@"构思"];
+        
         NSLog(@"狗的名字是%@",dog.dogName);
         
-        
+        NSLog(@"狗的名字是%@",dog.dogName);
         
         NSLog(@"Hello, World!2");
         
         NSString* text =[[NSString alloc] initWithFormat:@"豆芽啊"];
         
-        NSString *unicodeStr = [NSString stringWithCString:[text UTF8String] encoding:NSUnicodeStringEncoding];
         
 
         
-        printf("c==============%s\n", unicodeStr);     //输出字符 c=A
+        NSMutableArray *sonsArry=[NSMutableArray array];
         
+        [sonsArry addObject:@"大狗"];
+        [sonsArry addObject:@"二狗"];
+        [sonsArry addObject:@"三狗"];
 
+        dog.sons=sonsArry;
+        
+        NSMutableDictionary *masterDictionary=[NSMutableDictionary dictionary];
+        
+        [masterDictionary setObject:@"麦当劳" forKey:@"a"];
+        [masterDictionary setObject:@"肯德基" forKey:@"b"];
+        [masterDictionary setObject:@"必胜客" forKey:@"c"];
+        
+        dog.master=masterDictionary;
+        
+        
+        
+ 
+        for(int i=0;i<dog.sons.count;i++){
+            NSString *str=[sonsArry objectAtIndex:i];
+            NSLog(@"儿子们:%d%@",i,str);
+        }
+        
+        for(NSString *key in  dog.master.allKeys){
+            
+
+            NSLog(@"主人们:%@",[dog.master objectForKey:key]);
+
+        }
+        
+        
+        
         
         
         
@@ -106,6 +138,9 @@ int main(int argc, const char * argv[]) {
         [mtStr appendFormat:@"恭喜发%@,红包哪里%@",@"财",@"来"];
         
         NSLog(mtStr,NULL);
+        
+        
+        
         
         
         
