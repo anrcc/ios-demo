@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CocoaLumberjack.h"
 
 @implementation AppDelegate
 
@@ -41,6 +42,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)applicationDidFinishLaunching:(UIApplication *)application
+{
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
 }
 
 @end

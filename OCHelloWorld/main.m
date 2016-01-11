@@ -30,6 +30,15 @@ int main(int argc, const char * argv[]) {
         
         
         NSLog(@"Hello, World!2");
+        
+        NSString* text =[[NSString alloc] initWithFormat:@"豆芽啊"];
+        
+        NSString *unicodeStr = [NSString stringWithCString:[text UTF8String] encoding:NSUnicodeStringEncoding];
+        
+
+        
+        printf("c==============%s\n", unicodeStr);     //输出字符 c=A
+        
 
         
         
