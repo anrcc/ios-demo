@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E848F52B3D2DAB617B735838356B72DA04EDCF62",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++6552" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E848F52B3D2DAB617B735838356B72DA04EDCF62" : 0,
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++6552" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4454F18C-2623-4BE9-B1F4-71BD4D247B5E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E848F52B3D2DAB617B735838356B72DA04EDCF62" : "HelloWorld\/",
+    "1a0beb16-39a9-491a-8432-0dfbb1476d54++6552" : "..\/..\/Desktop\/%E6%96%87%E6%A1%A3\/DiaryServer"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HelloWorld",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HelloWorld.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn.duapp.com\/appidc70htzy278",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1a0beb16-39a9-491a-8432-0dfbb1476d54++6552"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/github.com\/anrcc\/ios-demo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E848F52B3D2DAB617B735838356B72DA04EDCF62"
+    }
+  ]
+}
