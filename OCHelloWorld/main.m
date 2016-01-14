@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Dog.h"
 #import "CocoaLumberjack.h"
+
+#import "CocoaAsyncSocket.h"
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
@@ -196,6 +199,8 @@ int main(int argc, const char * argv[]) {
            NSLog(@"%@", [mtDictionary objectForKey:cmKey]);
         }
         
+        NSLog(@"======================socket============================");
+
         
         
     }

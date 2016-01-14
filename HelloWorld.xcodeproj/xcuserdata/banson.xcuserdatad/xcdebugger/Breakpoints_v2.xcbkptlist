@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld/ViewController.h"
-            timestampString = "455157501.214294"
+            timestampString = "474453152.415038"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "@interface ViewController"
-            landmarkType = "2">
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-sendMsg:"
+            landmarkType = "4">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

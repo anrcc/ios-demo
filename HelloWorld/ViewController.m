@@ -9,7 +9,6 @@
 
 
 #import "ViewController.h"
-#import "CocoaLumberjack.h"
 
 
 
@@ -19,9 +18,13 @@
 
 @implementation ViewController
 @synthesize userOutput;
+@synthesize socketClinent;
 
 
 
+
+DDTTYLogger *logger=nil;
+DDFileLogger *fileLogger =nil;
 
 
 
@@ -31,6 +34,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self connectServer:HOST_IP port:HOST_PORT];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,8 +44,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-DDTTYLogger *logger=nil;
-DDFileLogger *fileLogger =nil;
+
+-(void) viewDidUnload
+{
+
+    self.socketClinent=nil; //释放对象
+}
+
+
+
 
 - (IBAction)commit:(id)sender {
     UIAlertView *conmitAlert = [[ UIAlertView alloc ] initWithTitle:@"提交提示" message:@"谁让你提交了?" delegate:nil cancelButtonTitle:@"滚吧!" otherButtonTitles:nil, nil];
@@ -71,6 +83,9 @@ DDFileLogger *fileLogger =nil;
     DDLogVerbose(@"User selected file:%@ withSize:%@",@"a",@"b");
     DDLogInfo(@"User selected file:%@ withSize:%@",@"a",@"b");
     
+    [self sendMsg:@"aaaaaa" ];
+    
+
 }
 
 
@@ -101,5 +116,122 @@ DDFileLogger *fileLogger =nil;
           NSLog(@"滚");
     }
 }
+
+
+
+
+
+
+
+- (void)sendMsg:(NSString*) text {
+    
+    NSLog(@"sendMsg");
+    
+    NSLog(@"%a",text);
+    NSData *data = [text dataUsingEncoding:NSISOLatin1StringEncoding];
+    [socketClinent writeData:data withTimeout:-1 tag:0];
+}
+
+- (int) connectServer: (NSString *) hostIP port:(int) hostPort{
+    
+    NSLog(@"connectServer");
+    if (socketClinent == nil) {
+        socketClinent = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:self];
+        NSError *err = nil;
+        //192.168.110.128
+        if (![socketClinent connectToHost:hostIP onPort:hostPort error:&err]) {
+            NSLog(@"%@ %@", [err code], [err localizedDescription]);
+            
+        
+//            [alert show];
+//            [alert release];
+            
+            //client = nil;
+            return SRV_CONNECT_FAIL;
+        } else {
+            NSLog(@"Conectou!");
+            return SRV_CONNECT_SUC;
+        }
+    }
+    else {
+        [socketClinent readDataWithTimeout:-1 tag:0];
+        return SRV_CONNECTED;
+    }
+    
+}
+
+- (IBAction) reConnect{
+    int stat = [self connectServer:HOST_IP port:HOST_PORT];
+    NSLog(@"reconnect:%@",stat);
+    switch (stat) {
+        case SRV_CONNECT_SUC:
+            [self showMessage:@"connect success"];
+            break;
+        case SRV_CONNECTED:
+            [self showMessage:@"It's connected,don't agian"];
+            break;
+        default:
+            break;
+    }
+}
+
+- (IBAction) sendMsg{
+    
+    /* NSLog(@"sendMsg");
+     
+     NSString *inputMsgStr = self.inputMsg.text;
+     NSString * content = [inputMsgStr stringByAppendingString:@"\r\n"];
+     NSLog(@"%a",content);
+     NSData *data = [content dataUsingEncoding:NSISOLatin1StringEncoding];
+     [client writeData:data withTimeout:-1 tag:0];
+     */
+    //[data release];
+    //[content release];
+    //[inputMsgStr release];
+    //继续监听读取
+    //[client readDataWithTimeout:-1 tag:0];
+}  
+
+
+
+
+
+
+
+
+//socket连接成功后的回调代理
+//-(void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
+//    NSLog(@"onSocket:%p didConnectToHost:%@ port:%hu", sock, host, port);
+////    [delegate networkConnected];
+////    [self listenData];
+//}
+
+////socket连接断开后的回调代理
+//-(void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+//    NSLog(@"DisConnetion");
+//    [socket disconnect];
+//    [delegate networkDisconnect];
+//    //    if (needConnect)
+//    //        [self getConnection];
+//}
+//
+////读到数据后的回调代理
+//-(void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+//    NSLog(@"receive datas from method 1");
+//    //    NSLog(@"Data length = %d",[data length]);
+//    [self listenData];
+//    [delegate readData:data];
+//    //    [self splitData:data];
+//    //    [self listenData];
+//}
+//
+//
+////发起一个读取的请求，当收到数据时后面的didReadData才能被回调
+//-(void)listenData {
+//    //    NSString* sp = @"\n";
+//    //    NSData* sp_data = [sp dataUsingEncoding:NSUTF8StringEncoding];
+//    [socket readDataToData:[GCDAsyncSocket LFData] withTimeout:-1 tag:1];
+//    //    [socket readDataWithTimeout:-1 tag:1];
+//}
 
 @end
