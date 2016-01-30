@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CocoaLumberjack.h"
 
-#import "GCDAsyncSocket.h"
+#import "CocoaAsyncSocket.h"
 
 #define SRV_CONNECTED 0
 #define SRV_CONNECT_SUC 1
@@ -19,7 +19,7 @@
 #define HOST_PORT 58888
 
 
-@interface ViewController : UIViewController<UIAlertViewDelegate>{
+@interface ViewController : UIViewController<UIAlertViewDelegate,GCDAsyncSocketDelegate>{
     IBOutlet UILabel *userOutput;
     GCDAsyncSocket * socketClient;//socket 客户端
     
@@ -34,7 +34,7 @@
 
 
 - (void)sendMsg:(NSString *)text;
-- (int) connectServer: (NSString *) hostIP port:(int) hostPort;
+- (BOOL) connect: (NSString *) hostIP port:(int) hostPort;
 - (void) showMessage:(NSString *) msg;
 - (IBAction) reConnect;
 
